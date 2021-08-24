@@ -97,3 +97,8 @@ C:\Users\Manuel\Source\Repos\Skinet\API\obj\Debug\net5.0\API.dll
 C:\Users\Manuel\Source\Repos\Skinet\API\obj\Debug\net5.0\ref\API.dll
 C:\Users\Manuel\Source\Repos\Skinet\API\obj\Debug\net5.0\API.pdb
 C:\Users\Manuel\Source\Repos\Skinet\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+C:\Users\Manuel\Source\Repos\Skinet\API\bin\Debug\net5.0\Core.dll
+C:\Users\Manuel\Source\Repos\Skinet\API\bin\Debug\net5.0\Infrastructure.dll
+C:\Users\Manuel\Source\Repos\Skinet\API\bin\Debug\net5.0\Core.pdb
+C:\Users\Manuel\Source\Repos\Skinet\API\bin\Debug\net5.0\Infrastructure.pdb
+C:\Users\Manuel\Source\Repos\Skinet\API\obj\Debug\net5.0\API.csproj.AssemblyReference.cache
