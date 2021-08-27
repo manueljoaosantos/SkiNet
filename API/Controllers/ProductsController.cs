@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,23 +15,24 @@ namespace API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly StoreContext _context;
-        public ProductsController(StoreContext context)
+        private readonly IProductRepository _repo;
+        public ProductsController(IProductRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         [HttpGet("get-all-products")]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            var products = await _context.Products.ToListAsync();
+            var products = await _repo.GetAllProducsAysnc();
             return Ok(products);
-    }
+        }
+
         [HttpGet("get-product-by-id/{id}")]
         //[HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await _repo.GetProductByIdAysnc(id);
             return Ok(product);
         }
     }
