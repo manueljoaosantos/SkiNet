@@ -33,6 +33,7 @@ namespace API
         {
             //Acrescentar o Repositorio
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
             services.AddControllers();
             //Configuração da DBContext com SQL
             //services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString
