@@ -112,38 +112,38 @@
 					"response": []
 				},
 				{
-					"name": "Get Product Brands",
+					"name": "get-all-productBrands",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/brands",
+							"raw": "{{url}}/api/products/get-all-productBrands",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"brands"
+								"get-all-productBrands"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Product Types",
+					"name": "get-all-productTypes",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/brands",
+							"raw": "{{url}}/api/products/get-all-productTypes",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"brands"
+								"get-all-productTypes"
 							]
 						}
 					},
@@ -156,36 +156,36 @@
 			"name": "Section 4 - Genrics",
 			"item": [
 				{
-					"name": "Get Products",
+					"name": "get-all-products",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products",
+							"raw": "{{url}}/api/products/get-all-products",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Product",
+					"name": "get-product-by-id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/2",
+							"raw": "{{url}}/api/products/get-product-by-id/{2}",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products",
+								"products/get-product-by-id",
 								"2"
 							]
 						}
@@ -193,38 +193,38 @@
 					"response": []
 				},
 				{
-					"name": "Get Product Brands",
+					"name": "get-all-productBrands",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/brands",
+							"raw": "{{url}}/api/products/get-all-productBrands",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"brands"
+								"get-all-productBrands"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Product Types",
+					"name": "get-all-productTypes",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products/brands",
+							"raw": "{{url}}/api/products/get-all-productTypes",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
 								"products",
-								"brands"
+								"get-all-productTypes"
 							]
 						}
 					},

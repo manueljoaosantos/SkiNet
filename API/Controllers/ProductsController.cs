@@ -22,7 +22,7 @@ namespace API.Controllers
         }
 
         [HttpGet("get-all-products")]
-        public async Task<ActionResult<List<Product>>> GetAllProducts()
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetAllProducts()
         {
             var products = await _repo.GetAllProducsAysnc();
             return Ok(products);
@@ -34,6 +34,20 @@ namespace API.Controllers
         {
             var product = await _repo.GetProductByIdAysnc(id);
             return Ok(product);
+        }
+
+        [HttpGet("get-all-productTypes")]
+        public async Task<ActionResult<IReadOnlyList<Product>>> GetAllProducTypesAysnc()
+        {
+            var productTypes = await _repo.GetAllProducTypesAysnc();
+            return Ok(productTypes);
+        }
+
+        [HttpGet("get-all-productBrands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetAllProducBrandsAysnc()
+        {
+            var productBrands = await _repo.GetAllProducBrandsAysnc();
+            return Ok(productBrands);
         }
     }
 }

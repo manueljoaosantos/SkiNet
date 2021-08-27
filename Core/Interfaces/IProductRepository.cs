@@ -11,6 +11,8 @@ namespace Core.Interfaces
     {
         Task<Product> GetProductByIdAysnc(int id);
         Task<IReadOnlyList<Product>> GetAllProducsAysnc();
+        Task<IReadOnlyList<ProductBrand>> GetAllProducBrandsAysnc();
+        Task<IReadOnlyList<ProductType>> GetAllProducTypesAysnc();
 
     }
 }

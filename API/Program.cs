@@ -20,24 +20,23 @@ namespace API
             //Criar base de dados caso não exista, foi substituida a linha anterior pelo bloco de codigo a seguir!!!
             // 1ª vez executar dotnet watch run
             var host = CreateHostBuilder(args).Build();
-            using(var scope = host.Services.CreateScope())
+            using var scope = host.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+            try
             {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-                try
-                {
-                    var context = services.GetRequiredService<StoreContext>();
-                    await context.Database.MigrateAsync();
-                    await StoreContextSeed.SeedAdync(context, loggerFactory);
-                }
-                catch (Exception ex)
-                {
-
-                   var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(ex, "Erro ocorrindo durante a migração!!!");
-                }
-                host.Run();
+                var context = services.GetRequiredService<StoreContext>();
+                await context.Database.MigrateAsync();
+                await StoreContextSeed.SeedAdync(context, loggerFactory);
             }
+            catch (Exception ex)
+            {
+
+                var logger = loggerFactory.CreateLogger<Program>();
+                logger.LogError(ex, "Erro ocorrindo durante a migração!!!");
+            }
+            host.Run();
+            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
