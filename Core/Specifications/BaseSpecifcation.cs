@@ -6,15 +6,17 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Specifications
 {
-    public class BaseSpecification<T> : ISpecification<T>
+    public class BaseSpecifcation<T> : ISpecification<T>
     {
-        public BaseSpecification(Expression<Func<T, bool>> criteria, 
-            List<Expression<Func<T, object>>> includes)
+        public BaseSpecifcation()
+        {
+        }
+        public BaseSpecifcation(Expression<Func<T, bool>> criteria)
         {
             Criteria = criteria;
-            Includes = includes;
+            //Includes = includes;
         }
 
         public Expression<Func<T, bool>> Criteria { get; }
