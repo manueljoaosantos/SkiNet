@@ -1,4 +1,5 @@
-﻿using Core.Entities;
+﻿using API.Dtos;
+using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
 using Infrastructure.Data;
@@ -33,28 +34,55 @@ namespace API.Controllers
         }
 
         [HttpGet("get-all-products")]
-        public async Task<ActionResult<IReadOnlyList<Product>>> GetAllProducts()
+        //public async Task<ActionResult<IReadOnlyList<Product>>> GetAllProducts()
+        //{
+        //    var spec = new ProductsWithTypesAndBrandsSpecification();
+
+        //    var products = await _productRepo.ListAsync(spec);
+        //    return Ok(products);
+        //}
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts()
         {
             var spec = new ProductsWithTypesAndBrandsSpecification();
 
             var products = await _productRepo.ListAsync(spec);
-            return Ok(products);
+            return products.Select(product => new ProductToReturnDto
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                PictureUrl = product.PictureUrl,
+                Price = product.Price,
+                ProductBrand = product.ProductBrand.Name,
+                ProductType = product.ProductType.Name
+            }).ToList();
         }
 
         [HttpGet("get-product-by-id/{id}")]
-        public async Task<IActionResult> GetProductById(int id)
+        //public async Task<ActionResult<Product>> GetProductById(int id)
+        //{
+        //    var spec = new ProductsWithTypesAndBrandsSpecification(id);
+
+        //    var product = await _productRepo.GetEntityWithSpec(spec);
+        //    return Ok(product);
+        //}
+
+        public async Task<ActionResult<ProductToReturnDto>> GetProductById(int id)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
 
             var product = await _productRepo.GetEntityWithSpec(spec);
-            return Ok(product);
-        }
 
-        [HttpGet("get-all-productTypes")]
-        public async Task<ActionResult<IReadOnlyList<Product>>> GetAllProducTypesAysnc()
-        {
-            var productTypes = await _productTypeRepo.ListAllAsync();
-            return Ok(productTypes);
+            return new ProductToReturnDto
+            { 
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                PictureUrl = product.PictureUrl,
+                Price = product.Price,
+                ProductBrand = product.ProductBrand.Name,
+                ProductType = product.ProductType.Name
+            };
         }
 
         [HttpGet("get-all-productBrands")]
