@@ -50,16 +50,17 @@ namespace API.Controllers
             var spec = new ProductsWithTypesAndBrandsSpecification();
 
             var products = await _productRepo.ListAsync(spec);
-            return products.Select(product => new ProductToReturnDto
-            {
-                Id = product.Id,
-                Name = product.Name,
-                Description = product.Description,
-                PictureUrl = product.PictureUrl,
-                Price = product.Price,
-                ProductBrand = product.ProductBrand.Name,
-                ProductType = product.ProductType.Name
-            }).ToList();
+            //return products.Select(product => new ProductToReturnDto
+            //{
+            //    Id = product.Id,
+            //    Name = product.Name,
+            //    Description = product.Description,
+            //    PictureUrl = product.PictureUrl,
+            //    Price = product.Price,
+            //    ProductBrand = product.ProductBrand.Name,
+            //    ProductType = product.ProductType.Name
+            //}).ToList();
+            return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
         }
 
         [HttpGet("get-product-by-id/{id}")]
@@ -87,7 +88,7 @@ namespace API.Controllers
             //    ProductBrand = product.ProductBrand.Name,
             //    ProductType = product.ProductType.Name
             //};
-            return _mapper.Map<Product, ProductToReturnDto>(product):
+            return _mapper.Map<Product, ProductToReturnDto>(product);
         }
 
         [HttpGet("get-all-productBrands")]
