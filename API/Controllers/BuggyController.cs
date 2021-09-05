@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class BuggyController : BaseApiController
     {
         private readonly StoreContext _context;
