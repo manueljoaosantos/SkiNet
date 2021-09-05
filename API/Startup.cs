@@ -61,7 +61,7 @@ namespace API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "kiNet API", Version = "v1" });
             });
         }
 
@@ -85,6 +85,12 @@ namespace API
             app.UseStaticFiles();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x => 
+            {
+                x.SwaggerEndpoint("swagger/v1/swagger.json", "SkiNet API v1"); 
+            });
 
             app.UseEndpoints(endpoints =>
             {

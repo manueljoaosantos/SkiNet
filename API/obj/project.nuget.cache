@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/SkTtNbV36xc4ZDNOzPNVZMw6Kh5Q4P5j8AjZWL+yVDznQpQNEz5DHiutzXIxKp+8rzJNZm2W8ObUZ/vIYpkBw==",
+  "dgSpecHash": "UvFEHkQ5hRV2M3+lNFRwZQVgtR1l5zcEEThC5zJjuEYDnNDco2O7d3JGl6nqzW5eV0G6/KZESGy2a7fER+i6sA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Manuel\\Source\\Repos\\Skinet\\API\\API.csproj",
   "expectedPackageFiles": [
@@ -87,9 +87,9 @@
     "C:\\Users\\Manuel\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Manuel\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.4\\sqlitepclraw.provider.dynamic_cdecl.2.0.4.nupkg.sha512",
     "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
-    "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
-    "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.0\\swashbuckle.aspnetcore.swagger.6.2.0.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.0\\swashbuckle.aspnetcore.swaggergen.6.2.0.nupkg.sha512",
+    "C:\\Users\\Manuel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.0\\swashbuckle.aspnetcore.swaggerui.6.2.0.nupkg.sha512",
     "C:\\Users\\Manuel\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Manuel\\.nuget\\packages\\system.buffers\\4.3.0\\system.buffers.4.3.0.nupkg.sha512",
     "C:\\Users\\Manuel\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
