@@ -61,6 +61,7 @@ namespace API
             //        return new BadRequestObjectResult(errorResponse);
             //    };
             //});
+            services.AddApplicationServices();
             services.AddSwaggerDocumentation();
             //Passou para: SwaggerServiceExtensions
             //services.AddSwaggerGen(c =>

@@ -153,7 +153,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Section 4 - Genrics",
+			"name": "Section 4 - Generics",
 			"item": [
 				{
 					"name": "get-all-products",
@@ -342,13 +342,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products",
+							"raw": "{{url}}/api/products/get-all-products",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							]
 						}
 					},
@@ -360,13 +360,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?sort=priceAsc",
+							"raw": "{{url}}/api/products/get-all-products?sort=priceAsc",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -384,13 +384,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?sort=priceDesc",
+							"raw": "{{url}}/api/products/get-all-products?sort=priceDesc",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -408,13 +408,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?brandId=2",
+							"raw": "{{url}}/api/products/get-all-products?brandId=2",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -432,13 +432,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?typeId=3",
+							"raw": "{{url}}/api/products/get-all-products?typeId=3",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -456,13 +456,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?typeId=3&brandId=2",
+							"raw": "{{url}}/api/products/get-all-products?typeId=3&brandId=2",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -484,13 +484,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/api/products?pageSize=10&pageIndex=1",
+							"raw": "{{url}}/api/products/get-all-products?pageSize=10&pageIndex=1",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -518,13 +518,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/api/products?typeId=3&brandId=2&sort=priceDesc",
+							"raw": "{{url}}/api/products/get-all-products?typeId=3&brandId=2&sort=priceDesc",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{
@@ -556,13 +556,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/api/products?typeId=3&brandId=2&sort=priceDesc",
+							"raw": "{{url}}/api/products/get-all-products?typeId=3&brandId=2&sort=priceDesc",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"api",
-								"products"
+								"products/get-all-products"
 							],
 							"query": [
 								{

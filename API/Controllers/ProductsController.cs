@@ -46,9 +46,9 @@ namespace API.Controllers
         //    var products = await _productRepo.ListAsync(spec);
         //    return Ok(products);
         //}
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts()
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts(string sort)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(sort);
 
             var products = await _productRepo.ListAsync(spec);
             //return products.Select(product => new ProductToReturnDto
