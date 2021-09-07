@@ -46,10 +46,13 @@ namespace API.Controllers
         //    var products = await _productRepo.ListAsync(spec);
         //    return Ok(products);
         //}
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts(string sort)
+        //public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts(string sort,
+        //    int ? brandId, int? typeId)
+        //{
+        //    var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId);
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetAllProducts([FromQuery]ProductSpecParams productParams)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification(sort);
-
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
             var products = await _productRepo.ListAsync(spec);
             //return products.Select(product => new ProductToReturnDto
             //{
