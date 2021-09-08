@@ -6,10 +6,6 @@ namespace Core.Specifications
 {
     public class ProductsWithTypesAndBrandsSpecification : BaseSpecifcation<Product>
     {
-     //public ProductsWithTypesAndBrandsSpecification(string sort, int? brandId, int? typeId)
-     //    : base(x => 
-     //    (!brandId.HasValue || x.ProductBrandId == brandId) && 
-     //    (!typeId.HasValue || x.ProductTypeId == typeId))
         public ProductsWithTypesAndBrandsSpecification(ProductSpecParams productParams)
     : base(x =>
     (string.IsNullOrEmpty(productParams.Search) || x.Name.ToLower().Contains(productParams.Search)) &&

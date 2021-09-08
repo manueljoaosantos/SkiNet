@@ -18,15 +18,6 @@ namespace API.Extensions
 
         public static IApplicationBuilder UseSwaggerDocumentation(this IApplicationBuilder app)
         {
-
-            //if (env.IsDevelopment())
-            //{
-            //    //Vamos persomlizar os errors, por isso deixamos aqui apenas o Swagger
-            //    //app.UseDeveloperExceptionPage();
-            //    app.UseSwagger();
-            //    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
-            //}
-
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
 

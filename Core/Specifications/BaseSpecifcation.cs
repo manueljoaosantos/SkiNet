@@ -16,13 +16,9 @@ namespace Core.Specifications
         public BaseSpecifcation(Expression<Func<T, bool>> criteria)
         {
             Criteria = criteria;
-            //Includes = includes;
         }
 
         public Expression<Func<T, bool>> Criteria { get; }
-
-        //        .Include(p => p.ProductType)
-        //        .Include(p => p.ProductBrand)
         public List<Expression<Func<T, object>>> Includes { get; }
         = new List<Expression<Func<T, object>>>();
 
@@ -49,7 +45,6 @@ namespace Core.Specifications
         {
             OrderByDescending = orderByDescExpression;
         }
-
         protected void ApplyPaging(int skip, int take)
         {
             Skip = skip;
