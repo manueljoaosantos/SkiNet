@@ -545,6 +545,40 @@
 					"response": []
 				},
 				{
+					"name": "Get Paged Products by Name [blue]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "https://localhost:4200",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/products/get-all-products?search=blue&sort=priceDesc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"products/get-all-products"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "blue"
+								},
+								{
+									"key": "sort",
+									"value": "priceDesc"
+								}
+							]
+						}
+					},
+					"response": []
+				},				
+				{
 					"name": "Check Cors is enabled",
 					"request": {
 						"method": "GET",
