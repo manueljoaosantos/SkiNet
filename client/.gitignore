@@ -43,3 +43,12 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+server.key
+server.crt
+obj
+bin
+*.db
+appsettings.json
+*.rdb
+publish
+wwwroot
