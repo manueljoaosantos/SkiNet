@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { IPagination } from './models/pagination';
-import { IProduct } from './models/product';
+import { IPagination } from './shared/models/pagination';
+import { IProduct } from './shared/models/product';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   title = 'SkiNet';
@@ -15,8 +15,9 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/products?pageSize=50').subscribe((response: IPagination) => {
+    this.http.get('https://localhost:5001/api/Products/get-all-products?pageSize=50').subscribe((response: IPagination) => {
       this.products = response.data;
+      console.trace(response);
     }, error => {
       console.log(error);
     })
