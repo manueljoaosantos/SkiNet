@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { IPagination } from './shared/models/pagination';
+/*import { IPagination } from './shared/models/pagination';
 import { IProduct } from './shared/models/product';
-
+*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,16 +10,18 @@ import { IProduct } from './shared/models/product';
 })
 export class AppComponent implements OnInit {
   title = 'SkiNet';
-  products: IProduct[];
+  //products: IProduct[];
 
-  constructor(private http: HttpClient) { }
+  //constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:5001/api/Products/get-all-products?pageSize=50').subscribe((response: IPagination) => {
+   /* this.http.get('https://localhost:5001/api/Products/get-all-products?pageSize=50').subscribe((response: IPagination) => {
       this.products = response.data;
       console.trace(response);
     }, error => {
       console.log(error);
     })
+    */
   }
 }
