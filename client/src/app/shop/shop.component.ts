@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
 import { IProduct } from '../shared/models/product';
 import { IType } from '../shared/models/productType';
+import { ShopParams } from '../shared/models/shopParams';
 import { ShopService } from './shop.service';
 
 @Component({
@@ -13,8 +14,15 @@ export class ShopComponent implements OnInit {
   products: IProduct[];
   productBrands: IBrand[];
   productTypes: IType[];
-  productBrandId: number;
-  productTypeId: number;
+  shopParams = new ShopParams();
+  totalCount: number = 0;
+
+  sortOptions = [
+    { name: 'Alphabetical', value: 'name' },
+    { name: 'Price: Low to Hight', value: 'priceAsc' },
+    { name: 'Price: Hight to Low', value: 'priceDesc' }
+  ];
+
   constructor(private shopService: ShopService) { }
 
   ngOnInit(): void {
@@ -25,8 +33,13 @@ export class ShopComponent implements OnInit {
 
   getAllProducts()
   {
-    this.shopService.getAllProducts(this.productBrandId, this.productTypeId).subscribe(response => {
+    /*this.shopService.getAllProducts(this.productBrandIdSelected, this.productTypeIdSelected, this.sortSelected).subscribe(response => {*/
+      this.shopService.getAllProducts(this.shopParams).subscribe(response => {      
       this.products = response.data;
+      this.shopParams.pageNumber = response.pageIndex;
+      this.shopParams.pageSize = response.pageSize;
+      this.totalCount  = response.count;
+
       console.trace(response);
     }, error => {
       console.log(error);
@@ -58,13 +71,25 @@ export class ShopComponent implements OnInit {
 
   onBrandSeleted(brandId: number)
   {
-    this.productBrandId = brandId;
+    this.shopParams.brandId = brandId;
     this.getAllProducts();
   }
 
   onTypeSeleted(typeId: number)
   {
-    this.productTypeId = typeId;
+    this.shopParams.typeId = typeId;
+    this.getAllProducts();
+  }
+
+  onSortSelected(sort: string)
+  {
+    this.shopParams.sort = sort;
+    this.getAllProducts();
+  }
+
+  onPageChanged(event: any)
+  {
+    this.shopParams.pageNumber = event.page;
     this.getAllProducts();
   }
 }

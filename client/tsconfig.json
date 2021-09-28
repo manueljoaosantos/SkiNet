@@ -24,6 +24,7 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
+    "strictDomEventTypes": false,//Property 'value' does not exist on type 'EventTarget' fazer de novo ng serve
     "strictTemplates": true
   }
 }
