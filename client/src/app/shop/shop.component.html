@@ -13,7 +13,6 @@
       <select class="custom-select ml-3" (change)="onSortSelected($event.target.value)">
       <option *ngFor="let sort of sortOptions" [value]="sort.value">{{sort.name}}</option>
         
-        
       </select>
       <h5 class="text-warning ml-3">
         Brands
@@ -42,13 +41,20 @@
     </section>
     <section class="col-9">
       <div class="d-flex justify-content-between align-items-center pb-2">
-        <header>
-          <div class="form-inline mt-2">
-            <input type="text" class="form-control" style="width: 300px;" placeholder="Search">
-            <button class="btn btn-outline-primary ml-2 my-2">Search</button>
-            <button class="btn btn-outline-success ml-2 my-2">Reset</button>            
-          </div>
-        </header>          
+        <app-paging-header
+        [totalCount] = "totalCount"
+        [pageNumber] = "this.shopParams.pageNumber"
+        [pageSize] = "this.shopParams.pageSize">
+      </app-paging-header>
+
+      
+
+      
+        <div class="form-inline mt-2">
+          <input type="text" class="form-control" style="width: 300px;" placeholder="Search">
+          <button class="btn btn-outline-primary ml-2 my-2">Search</button>
+          <button class="btn btn-outline-success ml-2 my-2">Reset</button>            
+        </div>          
       </div>
 
       <div class="row">
@@ -56,17 +62,28 @@
             <app-product-item [product]="item"></app-product-item>
           </div>
       </div>   
+      <span *ngIf="totalCount && totalCount > 0">
       <div class="d-flex justify-content-center">
-        <pagination [boundaryLinks]="true" 
-          [totalItems]="this.totalCount"
-          (pageChanged)= "onPageChanged($event)"
-          [itemsPerPage]="this.shopParams.pageSize"
-          previousText="&lsaquo;" 
-          nextText="&rsaquo;" 
-          firstText="&laquo;" 
-          lastText="&raquo;">
-        </pagination>
-      </div>
+
+<app-pager
+  [pageSize]="this.shopParams.pageSize"
+  [totalCount]="this.totalCount"
+  (pageChanged)="onPageChanged($event)"
+  >
+</app-pager>
+
+<!--
+<pagination [boundaryLinks]="true" 
+  [totalItems]="this.totalCount"
+  (pageChanged)= "onPageChanged($event)"
+  [itemsPerPage]="this.shopParams.pageSize"
+  previousText="&lsaquo;" 
+  nextText="&rsaquo;" 
+  firstText="&laquo;" 
+  lastText="&raquo;">
+</pagination>
+-->
+      </div></span>
 
 
     </section>
